@@ -1,7 +1,9 @@
-<script>
-	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
+<script lang="ts">
+	import { page } from "$app/stores";
+	import logo from "$lib/images/svelte-logo.svg";
+	import github from "$lib/images/github.svg";
+	import { i18n } from "../i18n";
+	import Lang from "@components/Lang.svelte";
 </script>
 
 <header>
@@ -16,14 +18,17 @@
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
 		<ul>
-			<li class:active={$page.url.pathname === '/'}>
-				<a href="/">Home</a>
+			<li class:active={$page.url.pathname === "/"}>
+				<a href="/">{$i18n.t("home")}</a>
 			</li>
-			<li class:active={$page.url.pathname === '/about'}>
+			<li class:active={$page.url.pathname === "/about"}>
 				<a href="/about">About</a>
 			</li>
-			<li class:active={$page.url.pathname.startsWith('/sverdle')}>
+			<li class:active={$page.url.pathname.startsWith("/sverdle")}>
 				<a href="/sverdle">Sverdle</a>
+			</li>
+			<li class:active={$page.url.pathname.startsWith("/sverdle")}>
+				<Lang />
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -99,7 +104,7 @@
 
 	li.active::before {
 		--size: 6px;
-		content: '';
+		content: "";
 		width: 0;
 		height: 0;
 		position: absolute;
