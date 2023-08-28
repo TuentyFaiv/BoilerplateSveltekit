@@ -1,0 +1,44 @@
+{
+	"name": "ditto-svelte",
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"start": "vite dev --open",
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"test": "playwright test",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "eslint ./src/ --fix"
+	},
+	"dependencies": {
+		"@emotion/css": "^11.11.2",
+		"@tuentyfaiv/http": "^0.1.9",
+		"@tuentyfaiv/svelte-modal": "^0.0.4",
+		"date-fns": "^2.30.0",
+		"i18next": "^23.4.6",
+		"i18next-browser-languagedetector": "^7.1.0",
+		"i18next-http-backend": "^2.2.1",
+		"svelte-i18next": "^2.0.0",
+		"sweetalert": "^2.1.2",
+		"yup": "^1.2.0"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.37.1",
+		"@sveltejs/adapter-static": "^2.0.3",
+		"@sveltejs/kit": "^1.23.0",
+		"@typescript-eslint/eslint-plugin": "^6.5.0",
+		"@typescript-eslint/parser": "^6.5.0",
+		"eslint": "^8.48.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-config-airbnb-typescript": "^17.1.0",
+		"eslint-plugin-svelte": "^2.33.0",
+		"svelte": "^4.2.0",
+		"svelte-check": "^3.5.0",
+		"svelte-preprocess": "^5.0.4",
+		"tslib": "^2.6.2",
+		"typescript": "^5.2.2",
+		"vite": "^4.4.9"
+	}
+}
