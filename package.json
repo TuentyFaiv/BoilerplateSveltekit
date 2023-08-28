@@ -1,7 +1,10 @@
 {
-	"name": "ditto-svelte",
+	"name": "boilerplate-sveltekit",
 	"version": "0.0.1",
 	"type": "module",
+	"description": "A boilerplate for building SvelteKit apps with TypeScript, ESLint, Playwright, and i18next.",
+	"main": "svelte.config.js",
+	"license": "MIT",
 	"scripts": {
 		"start": "vite dev --open",
 		"dev": "vite dev",
@@ -40,5 +43,18 @@
 		"tslib": "^2.6.2",
 		"typescript": "^5.2.2",
 		"vite": "^4.4.9"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/TuentyFaiv/BoilerplateSveltekit.git"
+	},
+	"keywords": [
+		"svelte",
+		"sveltekit"
+	],
+	"author": "Tonalli <contact@tuentyfaiv.com>",
+	"bugs": {
+		"url": "https://github.com/TuentyFaiv/BoilerplateSveltekit/issues"
+	},
+	"homepage": "https://github.com/TuentyFaiv/BoilerplateSveltekit#readme"
 }
