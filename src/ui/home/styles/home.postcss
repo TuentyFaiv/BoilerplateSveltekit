@@ -1,0 +1,13 @@
+.home {
+  @apply flex justify-center items-center flex-col min-h-[70vh];
+  &__title {
+    @apply w-full text-center;
+  }
+  &__welcome {
+    @apply relative block w-full h-0 z-0;
+    padding-bottom: calc(100% * 495 / 2048);
+  }
+  &__image {
+    @apply absolute block w-full h-full top-0 z-0;
+  }
+}

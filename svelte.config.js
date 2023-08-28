@@ -32,7 +32,6 @@ const config = {
 			"@sharing/molecules": "src/ui/sharing/molecules/index.ts",
 			"@sharing/organisms": "src/ui/sharing/organisms/index.ts",
 			"@styles": "src/ui/sharing/styles/globals.ts",
-			"@mixins": "src/ui/sharing/styles/mixins.ts",
 		}
 	}
 };

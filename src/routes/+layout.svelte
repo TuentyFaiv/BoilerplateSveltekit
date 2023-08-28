@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { layout } from "@styles";
+	import "@styles";
 
 	import { Header } from "@sharing/organisms";
 </script>
 
 <Header />
 
-<main class={layout.main}>
+<main class="layout">
 	<slot />
 </main>

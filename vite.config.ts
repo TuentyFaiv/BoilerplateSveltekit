@@ -1,8 +1,11 @@
 import { sveltekit } from "@sveltejs/kit/vite";
-import type { UserConfig } from "vite";
+import { defineConfig } from "vitest/config";
 
-const config: UserConfig = {
-  plugins: [sveltekit()],
-};
+import { purgeCss } from "vite-plugin-tailwind-purgecss";
 
-export default config;
+export default defineConfig({
+  plugins: [sveltekit(), purgeCss()],
+  test: {
+    include: ['src/**/*.{test,spec}.{js,ts}']
+  }
+});

@@ -1,9 +1,7 @@
 <script lang="ts">
-  import { cx } from "@emotion/css";
-
   import type { Props } from "./Button.proptypes";
 
-  import * as styles from "./Button.styles";
+  import "./Button.postcss";
 
   export let text: Props["text"];
   export let type: Props["type"] = "button";
@@ -15,26 +13,28 @@
   export let datas: Props["datas"] = {};
 
   const stylesOptions = {
-    undefined: styles.button,
-    normal: styles.button,
-    gradient: styles.button_gradient,
-    outline: styles.button_outline,
-    invert: styles.button_invert,
+    undefined: "variant-filled-primary button-normal",
+    normal: "variant-filled-primary button-normal",
+    gradient:
+      "bg-gradient-to-br variant-gradient-primary-secondary button-gradient",
+    outline: "variant-ringed-primary button-outline",
+    invert: "variant-filled-surface button-invert",
   };
 
   const sizesOptions = {
-    normal: styles.size_normal,
-    undefined: styles.size_normal,
-    small: styles.size_small,
-    big: styles.size_big,
+    normal: "size-normal",
+    undefined: "size-normal",
+    small: "size-small",
+    mid: "size-mid",
+    big: "size-big",
   };
 
   const textOptions = {
-    undefined: styles.text_normal,
-    normal: styles.text_normal,
-    upper: styles.text_upper,
-    lower: styles.text_lower,
-    capital: styles.text_capital,
+    undefined: "text-normal",
+    normal: "text-normal",
+    upper: "text-upper",
+    lower: "text-lower",
+    capital: "text-capital",
   };
 
   $: datasets = Object.keys(datas).reduce(
@@ -42,11 +42,10 @@
     {}
   );
 
-  $: stylesToApply = cx(
-    stylesOptions[`${config.style}`],
-    textOptions[`${config.text}`],
-    sizesOptions[`${config.size}`]
-  );
+  $: style = stylesOptions[`${config.style}`];
+  $: styleText = textOptions[`${config.text}`];
+  $: styleSize = sizesOptions[`${config.size}`];
+  $: stylesToApply = `btn ${style} ${styleText} ${styleSize}`;
 </script>
 
 {#if type === "label"}

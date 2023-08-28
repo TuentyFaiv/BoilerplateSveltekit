@@ -2,13 +2,17 @@
   import { isLoading } from "svelte-i18next";
   import { i18n } from "@stores";
 
-  import * as styles from "./Lang.styles";
+  import "./Lang.postcss";
 
   function onChangeLang() {
     $i18n.changeLanguage($i18n.language === "es" ? "en-US" : "es");
   }
 </script>
 
-<button on:click={onChangeLang} disabled={$isLoading} class={styles.lang}>
+<button
+  on:click={onChangeLang}
+  disabled={$isLoading}
+  class="btn-icon variant-ghost-primary lang"
+>
   {$i18n.language?.split("-")[0]}
 </button>
